@@ -8,13 +8,17 @@
     <div class="container mx-auto">
         <div class="flex flex-col pt-6">
             @if ($errors->any())
-            <div class="alert alert-danger">
                 <ul>
                     @foreach ($errors->all() as $error)
+                    <div class="text-center py-4 lg:px-4">
+                        <div class="p-2 bg-red-500 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+                          <span class="flex rounded-full bg-red-800 uppercase px-2 py-1 text-xs font-bold mr-3">!</span>
+                          <span class="font-semibold mr-2 text-left text-white flex-auto">{{ $error }}</span>
+                        </div>
+                      </div>
                     <li>{{ $error }}</li>
                     @endforeach
                 </ul>
-            </div><br />
             @endif
 
             <form method="post" action="{{ route('posts.store') }}" class="w-full">
@@ -32,7 +36,7 @@
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                       Body
                     </label>
-                    <textarea name="body" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="The article goes here"></textarea>
+                    <textarea name="body" class="h-64 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" placeholder="The article goes here"></textarea>
                   </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
