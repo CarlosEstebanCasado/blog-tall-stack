@@ -19,7 +19,7 @@ class BlogController extends Controller
         $posts = Post::all();
         $categories = Category::all();
         $users = User::all();
-        return view('principal', compact('posts', 'categories', 'users'));
+        return view('blog', compact('posts', 'categories', 'users'));
     }
 
     /**

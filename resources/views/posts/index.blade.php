@@ -10,7 +10,14 @@
 -->
 <div class="container mx-auto">
     <div class="flex flex-col pt-6">
-        
+        @if(session()->get('success'))
+        <div class="text-center py-4 lg:px-4">
+            <div class="p-2 bg-green-500 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+              <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">New</span>
+              <span class="font-semibold mr-2 text-left flex-auto">{{ session()->get('success') }}</span>
+            </div>
+          </div>
+        @endif
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
             <a href="{{ route('posts.create')}}">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold m-6 py-2 px-4 rounded-full">
