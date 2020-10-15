@@ -35,7 +35,7 @@
                             Here you can manage the Categories of the blog.
                         </div>
             
-                        <a href="https://laravel.com/docs">
+                        <a href="{{ route('categories.index')}}">
                             <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
                                     <div>Go to Categories</div>
             
@@ -57,7 +57,7 @@
                             Here you can manage the posts of the blog.
                         </div>
             
-                        <a href="https://laracasts.com">
+                        <a href="{{ route('posts.index')}}">
                             <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
                                     <div>Go to Posts</div>
             
