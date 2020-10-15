@@ -10,60 +10,75 @@
 -->
 <div class="container mx-auto">
     <div class="flex flex-col pt-6">
+        
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <a href="{{ route('posts.create')}}">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold m-6 py-2 px-4 rounded-full">
+                    New Post
+                </button>
+            </a>
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">  
             <table class="min-w-full divide-y divide-gray-200">
                 <thead>
                 <tr>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                    Name
+                        Id
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                    Title
+                        Author
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                    Status
+                        Category
                     </th>
                     <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                    Role
+                        Title
                     </th>
+                    <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                        Body
+                    </th>
+                    <th class="px-6 py-3 bg-gray-50"></th>
                     <th class="px-6 py-3 bg-gray-50"></th>
                 </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
-                <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap">
-                    <div class="flex items-center">
-                        <div class="flex-shrink-0 h-10 w-10">
-                        <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=60" alt="">
-                        </div>
-                        <div class="ml-4">
-                        <div class="text-sm leading-5 font-medium text-gray-900">
-                            Jane Cooper
-                        </div>
-                        <div class="text-sm leading-5 text-gray-500">
-                            jane.cooper@example.com
-                        </div>
-                        </div>
-                    </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap">
-                    <div class="text-sm leading-5 text-gray-900">Regional Paradigm Technician</div>
-                    <div class="text-sm leading-5 text-gray-500">Optimization</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap">
-                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                        Active
-                    </span>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
-                    Admin
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                    </td>
-                </tr>
+                    @foreach ($posts as $post)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-no-wrap">
+                            <div class="flex items-center">
+                                <div class="ml-4">
+                                    <div class="text-sm leading-5 font-medium text-gray-900">
+                                        {{$post->id}}
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap">
+                            <div class="text-sm leading-5 text-gray-900">{{$post->user_id}}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap">
+                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                {{$post->category_id}}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                            {{$post->title}}
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500">
+                            {{ Str::limit($post->body , 50, '...')}}
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+                            <a href="{{ route('posts.edit', $post->id)}}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
+                            <form action="{{ route('posts.destroy', $post->id)}}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="text-red-600 hover:text-red-900" type="submit">Delete</button>
+                              </form>
+                        </td>
+                    </tr>
+                    @endforeach
     
                 <!-- More rows... -->
                 </tbody>

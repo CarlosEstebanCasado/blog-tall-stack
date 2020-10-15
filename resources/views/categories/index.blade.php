@@ -11,6 +11,11 @@
     <div class="container mx-auto">
         <div class="flex flex-col pt-6">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <a href="{{ route('categories.create')}}">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold m-6 py-2 px-4 rounded-full">
+                        New Category
+                    </button>
+                </a>
             <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                 <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
                 <table class="min-w-full divide-y divide-gray-200">
@@ -52,7 +57,7 @@
                                     @method('DELETE')
                                     <button class="text-red-600 hover:text-red-900" type="submit">Delete</button>
                                   </form>
-                                <!--<a href="{{ route('categories.destroy')}}" class="text-red-600 hover:text-red-900">Delete</a>-->
+                                <!--<a href="" class="text-red-600 hover:text-red-900">Delete</a>-->
                             </td>
                         </tr>
                     @endforeach
