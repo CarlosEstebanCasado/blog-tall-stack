@@ -27,7 +27,7 @@
                     </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        @foreach ($categories as $category)
+                    @foreach ($categories as $category)
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
