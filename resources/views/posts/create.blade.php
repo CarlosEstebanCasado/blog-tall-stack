@@ -16,7 +16,6 @@
                           <span class="font-semibold mr-2 text-left text-white flex-auto">{{ $error }}</span>
                         </div>
                       </div>
-                    <li>{{ $error }}</li>
                     @endforeach
                 </ul>
             @endif
