@@ -17,17 +17,17 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::get('/', 'BlogController@index')->name('blog');
+Route::get('/', 'App\\Http\\Controllers\\BlogController@index')->name('blog');
 
-Route::get('/category/{id}', 'BlogController@getPostsCategory')->name('category');
+Route::get('/category/{id}', 'App\\Http\\Controllers\\BlogController@getPostsCategory')->name('category');
 
-Route::get('/post/{id}', 'BlogController@showPost')->name('post');
+Route::get('/post/{id}', 'App\\Http\\Controllers\\BlogController@showPost')->name('post');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('posts', 'PostController');
+Route::resource('posts', 'App\\Http\\Controllers\\PostController');
 
-Route::resource('categories', 'CategoryController');
+Route::resource('categories', 'App\\Http\\Controllers\\CategoryController');
