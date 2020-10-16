@@ -19,7 +19,7 @@ class BlogController extends Controller
         $posts = Post::all();
         $categories = Category::all();
         $users = User::all();
-        return view('blog', compact('posts', 'categories', 'users'));
+        return view('blog.index', compact('posts', 'categories', 'users'));
     }
 
     /**
@@ -32,7 +32,7 @@ class BlogController extends Controller
         $posts = Post::where('category_id',$id)->get();
         $category = Category::findOrFail($id);
         $users = User::all();
-        return view('category', compact('posts', 'category', 'users'));
+        return view('blog.category', compact('posts', 'category', 'users'));
     }
 
     /**
@@ -46,6 +46,6 @@ class BlogController extends Controller
         $categories = Category::all();
         $users = User::all();
 
-        return view('post', compact('post', 'categories', 'users'));
+        return view('blog.post', compact('post', 'categories', 'users'));
     }
 }

@@ -18,9 +18,16 @@
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-dropdown')
+    <body class="font-sans antialiased ">
+        <div class="min-h-screen bg-gray-100 pb-10">
+            @if (Route::has('login'))
+                @auth
+                    @livewire('navigation-dropdown')
+                @else
+                    @livewire('navigation-blog')
+                @endif
+            @endif
+            
 
             <!-- Page Heading -->
             <header class="bg-white shadow">
