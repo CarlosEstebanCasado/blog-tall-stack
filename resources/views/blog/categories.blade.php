@@ -18,7 +18,7 @@
                 
                         <div class="ml-12">
                             <div class="mt-2 text-sm text-gray-500">
-                                Here you can read the {{ $category->name }} posts.
+                                Here you can read about {{ $category->name }} posts.
                             </div>
                 
                             <a href="{{route('category', $category->id)}}">
