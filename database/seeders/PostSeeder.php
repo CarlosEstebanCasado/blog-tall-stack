@@ -20,7 +20,7 @@ class PostSeeder extends Seeder
             'user_id' => random_int(1,10),
             'category_id' => random_int(1,3),
             'title' => 'Title 1',
-            'body' => $faker->text,
+            'body' => $faker->text(5000),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -29,7 +29,7 @@ class PostSeeder extends Seeder
             'user_id' => random_int(1,10),
             'category_id' => random_int(1,3),
             'title' => 'Title 2',
-            'body' => $faker->text,
+            'body' => $faker->text(3000),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -38,7 +38,7 @@ class PostSeeder extends Seeder
             'user_id' => random_int(1,10),
             'category_id' => random_int(1,3),
             'title' => 'Title 3',
-            'body' => $faker->text,
+            'body' => $faker->text(2500),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -47,7 +47,7 @@ class PostSeeder extends Seeder
             'user_id' => random_int(1,10),
             'category_id' => random_int(1,3),
             'title' => 'Title 4',
-            'body' => $faker->text,
+            'body' => $faker->text(1500),
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -56,7 +56,7 @@ class PostSeeder extends Seeder
             'user_id' => random_int(1,10),
             'category_id' => random_int(1,3),
             'title' => 'Title 5',
-            'body' => $faker->text,
+            'body' => $faker->text(3500),
             'created_at' => now(),
             'updated_at' => now()
         ]);

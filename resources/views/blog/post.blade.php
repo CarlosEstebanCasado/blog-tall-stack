@@ -12,6 +12,13 @@
                 <h1 class="text-5xl font-medium text-center">{{$post->title}}</h1>
                 <p class="">{{ $post->body }}</p>
                 <div class="px-6 pt-4 pb-2">
+                    @foreach ($users as $user)
+                        @if ($user->id == $post->user_id)
+                            <span>Author: {{ $user->name }}</span>
+                        @endif
+                    @endforeach
+                </div>
+                <div class="px-6 pt-4 pb-2">
                     @foreach ($categories as $category)
                         @if ($category->id == $post->category_id)
                         <a href="{{route('category', $post->category_id)}}">
