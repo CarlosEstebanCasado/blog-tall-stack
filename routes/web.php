@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::get('/', 'App\\Http\\Controllers\\BlogController@index')->name('home-blog');
+Route::get('/', 'App\\Http\\Livewire\\Blog\\Index')->name('home-blog');
 
 Route::get('/all-categories', 'App\\Http\\Controllers\\BlogController@getCategories')->name('show-categories');
 
