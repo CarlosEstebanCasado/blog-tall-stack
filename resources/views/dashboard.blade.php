@@ -27,7 +27,7 @@
             <div class="bg-gray-200 grid grid-cols-1 md:grid-cols-2 sm:rounded-lg shadow-lg">
                 <div class="p-6">
                     <div class="flex items-center">
-                        <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="https://laravel.com/docs">Categories</a></div>
+                        <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="#">Categories</a></div>
                     </div>
             
                     <div class="ml-12">
@@ -49,7 +49,7 @@
             
                 <div class="p-6 border-t border-gray-200 md:border-t-0 md:border-l">
                     <div class="flex items-center">
-                        <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="https://laracasts.com">Posts</a></div>
+                        <div class="ml-4 text-lg text-gray-600 leading-7 font-semibold"><a href="#">Posts</a></div>
                     </div>
             
                     <div class="ml-12">

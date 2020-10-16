@@ -15,7 +15,7 @@
                     <x-jet-nav-link href="{{ route('home-blog') }}" :active="request()->routeIs('home-blog')">
                         {{ __('Home') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('home-blog') }}" :active="request()->routeIs('home-blog')">
+                    <x-jet-nav-link href="{{ route('show-categories') }}" :active="request()->routeIs('show-categories')">
                         {{ __('Categories') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
@@ -132,14 +132,17 @@
             <x-jet-responsive-nav-link href="{{ route('home-blog') }}" :active="request()->routeIs('home-blog')">
                 {{ __('Blog') }}
             </x-jet-responsive-nav-link>
+            <x-jet-responsive-nav-link href="{{ route('show-categories') }}" :active="request()->routeIs('show-categories')">
+                {{ __('Categories') }}
+            </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('posts.index') }}" :active="request()->routeIs('posts.index')">
-                {{ __('Posts') }}
+                {{ __('Manage Posts') }}
             </x-jet-responsive-nav-link>
             <x-jet-responsive-nav-link href="{{ route('categories.index') }}" :active="request()->routeIs('categories.index')">
-                {{ __('Categories') }}
+                {{ __('Manage Categories') }}
             </x-jet-responsive-nav-link>
         </div>
 

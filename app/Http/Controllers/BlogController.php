@@ -23,6 +23,15 @@ class BlogController extends Controller
     }
 
     /**
+     * Display all categories
+     * @return \Illuminate\Http\Response
+     */
+    public function getCategories(){
+        $categories = Category::all();
+        return view('blog.categories', compact('categories'));
+    }
+
+    /**
      * Display all posts from one category
      * @param  int  $id
      * @return \Illuminate\Http\Response
