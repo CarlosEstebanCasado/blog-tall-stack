@@ -36,12 +36,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    /*public function create()
     {
         $users = User::all();
         $categories = Category::all();
         return view('posts.create',compact('categories','users'));
-    }
+    }*/
 
     /**
      * Store a newly created resource in storage.

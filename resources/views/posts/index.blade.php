@@ -19,7 +19,7 @@
           </div>
         @endif
         <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <a href="{{ route('posts.create')}}">
+            <a href="{{ route('create-post')}}">
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold m-6 py-2 px-4 rounded-full">
                     New Post
                 </button>

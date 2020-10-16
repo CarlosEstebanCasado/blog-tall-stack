@@ -30,6 +30,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::resource('posts', 'App\\Http\\Controllers\\PostController');
+Route::get('/posts/create','App\\Http\\Livewire\\Posts\\Create')->name('create-post');
+
+Route::resource('posts', 'App\\Http\\Controllers\\PostController')->except([
+    'create'
+]);
 
 Route::resource('categories', 'App\\Http\\Controllers\\CategoryController');

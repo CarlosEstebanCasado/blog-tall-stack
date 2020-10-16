@@ -13,12 +13,20 @@ class Index extends Component
     public $categories;
     public $users;
 
-    public function mount(){
+    protected $listeners = ['postAdded' => 'refreshPosts'];
+
+    public function mount()
+    {
 
         $this->posts = Post::all();
         $this->categories = Category::all();
         $this->users = User::all();
 
+    }
+
+    public function refreshPosts()
+    {
+        $this->posts = Post::all();
     }
 
     public function render()
